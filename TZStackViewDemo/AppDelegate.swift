@@ -14,11 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //Appearance proxy for the UISegmentedControl font
         UISegmentedControl.appearance().setTitleTextAttributes(
-        [NSFontAttributeName:UIFont(name: "HelveticaNeue-Light", size:10.0)!],
-                for: UIControlState())
+            [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Light", size:10.0)!],
+        for: UIControl.State())
 
         //Launch the application
         window = UIWindow(frame: UIScreen.main.bounds)

@@ -21,15 +21,17 @@ extension NSLayoutConstraint {
         return "nil"
     }
     
-    fileprivate func toString(_ relation: NSLayoutRelation) -> String {
+    fileprivate func toString(_ relation: NSLayoutConstraint.Relation) -> String {
         switch relation {
         case .lessThanOrEqual: return "LessThanOrEqual"
         case .equal: return "Equal"
         case .greaterThanOrEqual: return "GreaterThanOrEqual"
+        @unknown default:
+            fatalError()
         }
     }
     
-    fileprivate func toString(_ attribute: NSLayoutAttribute) -> String {
+    fileprivate func toString(_ attribute: NSLayoutConstraint.Attribute) -> String {
         switch attribute {
         case .left: return "Left"
         case .right: return "Right"
@@ -52,6 +54,8 @@ extension NSLayoutConstraint {
         case .trailingMargin: return "TrailingMargin"
         case .centerXWithinMargins: return "CenterXWithinMargins"
         case .centerYWithinMargins: return "CenterYWithinMargins"
+        @unknown default:
+            fatalError()
         }
     }
 }
